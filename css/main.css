@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    background: #fff;
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: coral;
+    width: 84px;
+}
+
+.navigation-header {
+    flex: 1 0 auto;
+}
+
+.logout {
+    height: 50px;
+}
+
+.logo-container {
+    width: 90%;
+    margin: auto;
+}
+
+.logo-container a {
+    display: block;
+    background-image: url(../images/freeuni_logo.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 70px;
+    padding: 10px;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-item {
+    list-style: none;
+}
+
+.menu-item:hover {
+    background-color: sienna;
+}
+
+
+.menu-avatar {
+    overflow: hidden;
+    border-radius: 100%;
+    border: 2px solid red;
+    display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 36px;
+}
+
+.menu-item-text {
+    line-height: 1.5;
+    margin: 3px 0 0;
+    color: black;
+}
+
+.menu-item-link {
+    font-size: .9rem;
+    border-style: none;
+    background: transparent;
+    width: 100%;
+    padding: 0.4375rem 0;
+}
+
+.svgs {
+    width: 26px;
+}
+
+.mobile-header {
+    display: none;
+}
+
+.mobile-menu {
+    line-height: 1.5;
+    position: fixed;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: white;
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    border-style: none;
+    background: transparent;
+}
+
+@media screen and (max-width: 750px) {
+
+    .header {
+        display: none;
+    }
+
+    .mobile-header {
+        display: block;
+        top: 0px;
+        height: 55px;
+        background-color: coral;
+    }
+
+    .mobile-header-title {
+        font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 1.5;
+        padding: 15.6px;
+        text-align: center;
+    }
+
+    .mobile-header-hamburger {
+        font-size: .9rem;
+        border-style: none;
+        background: transparent;
+        padding: 15px 10px;
+        float: left;
+    }
+
+    .menu-avatar{
+        float: left;
+
+    }
+
+    .svgs {
+        float: left;
+        width: 36px;
+    }
+
+    .menu-item-text {
+        margin: 9px 60px 0;
+        width: 50%;
+        text-align: initial;
+    }
+
+    .logout {
+        position: absolute; 
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
