@@ -68,6 +68,7 @@ img {
 }
 
 .menu-item-text {
+    font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.5;
     margin: 3px 0 0;
     color: black;
@@ -107,6 +108,40 @@ img {
     right: 20px;
     border-style: none;
     background: transparent;
+}
+
+.slide-wrap {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    height: 100%;
+}
+
+.slide-menu {
+    position: fixed;
+    left: 84px;
+    width: 400px;
+    top: 0px;
+    bottom: 0px;
+    background-color: coral;
+}
+
+.slide-menu-avatar{
+    width: 100px;
+    height: 100px;
+}
+
+.slide-menu-text {
+    font-size: 1.5rem;
+}
+
+.slide-menu-link {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.slide-item-text {
+    text-align: left;
 }
 
 @media screen and (max-width: 750px) {

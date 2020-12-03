@@ -38,7 +38,7 @@ app.post('/login', function (request, response) {
 
 app.get('/home', function (request, response) {
     console.log('GET /')
-    fs.readFile('html/home.html', function (err, html) {
+    fs.readFile('html/main.html', function (err, html) {
         if (err) {
             throw err; 
         } 
@@ -48,6 +48,19 @@ app.get('/home', function (request, response) {
         response.end(html)
     });  
 })
+
+// app.get('/home/account', function (request, response) {
+//     console.log('GET /')
+//     fs.readFile('html/main.html', function (err, html) {
+//         if (err) {
+//             throw err; 
+//         } 
+//         response.writeHead(200, {
+//             'Content-Type': 'text/html'
+//         })
+//         response.end(html)
+//     });  
+// })
 
 port = 3000
 app.listen(port)
