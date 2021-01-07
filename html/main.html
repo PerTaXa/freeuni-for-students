@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
-    <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
     <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
 </head>
 
 <body>
@@ -21,7 +23,7 @@
             </div>
             <ul class="menu">
                 <li class="menu-item">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link account">
                         <div class="menu-avatar">
                             <img src="../images/bill_gates.jpg">
                         </div>
@@ -31,13 +33,13 @@
                     </button>
                 </li>
                 <li class="menu-item">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link dashboard">
                         <img class="svgs" src="../images/performance.svg">
                         <div class="menu-item-text">Dashboard</div>
                     </button>
                 </li>
                 <li class="menu-item">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link courses">
                         <img class="svgs" src="../images/book.svg">
                         <div class="menu-item-text">
                             Courses
@@ -45,7 +47,7 @@
                     </button>
                 </li>
                 <li class="menu-item">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link calendarr">
                         <img class="svgs" src="../images/schedule.svg">
                         <div class="menu-item-text">
                             Calendar
@@ -53,16 +55,8 @@
                     </button>
 
                 </li>
-                <li class="menu-item ">
-                    <button class="menu-item-link">
-                        <img class="svgs" src="../images/inbox.svg">
-                        <div class="menu-item-text">
-                            Inbox
-                        </div>
-                    </button>
-                </li>
                 <li class="menu-item">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link history">
                         <img class="svgs" src="../images/clock.svg">
                         <div class="menu-item-text">
                             History
@@ -71,7 +65,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link finances">
                         <img class="svgs" src="../images/finance.svg">
                         <div class="menu-item-text">
                             Finances
@@ -80,7 +74,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link help">
                         <img class="svgs" src="../images/info.svg">
                         <div class="menu-item-text">
                             Help
@@ -102,31 +96,13 @@
     </header>
 
     <div class="slide-menu">
-        <button class="close">
+        <button id="full-close" class="close">
             <img class="svgs" src="../images/x-mark.svg" style="width: 26px;">
         </button>
         <div class="slide-wrap">
-            <div class="menu-item-link slide-menu-link">
-                <div class="menu-avatar slide-menu-avatar">
-                    <img src="../images/bill_gates.jpg">
-                </div>
-                <div class="menu-item-text slide-menu-text">
-                    Bill Gates
-                </div>
-            </div>
-            <div style="background-color: black; height: 1px;margin-top: 25px;"></div>
-            <button class="menu-item-link">
-                <div class="menu-item-text slide-item-text">
-                    Profile
-                </div>
-            </button>
-            <button class="menu-item-link">
-                <div class="menu-item-text slide-item-text">
-                    Settings
-                </div>
-            </button>
+
         </div>
-        
+
     </div>
 
     <div class="mobile-menu" style="display: none;">
@@ -134,13 +110,13 @@
             <div class="logo-container" style="height: 80px; margin-left: 0px; width: 50px;">
                 <a href="/home"></a>
             </div>
-            <button class="close">
+            <button id="mobile-close" class="close">
                 <img class="svgs" src="../images/x-mark.svg" style="width: 26px;">
             </button>
         </div>
         <ul class="menu" style="margin: 0px;">
             <li class="menu-item">
-                <button class="menu-item-link">
+                <button class="menu-item-link account">
                     <div class="menu-avatar">
                         <img src="../images/bill_gates.jpg">
                     </div>
@@ -150,13 +126,13 @@
                 </button>
             </li>
             <li class="menu-item">
-                <button class="menu-item-link">
+                <button class="menu-item-link dashboard">
                     <img class="svgs" src="../images/performance.svg">
                     <div class="menu-item-text">Dashboard</div>
                 </button>
             </li>
             <li class="menu-item">
-                <button class="menu-item-link">
+                <button class="menu-item-link courses">
                     <img class="svgs" src="../images/book.svg">
                     <div class="menu-item-text">
                         Courses
@@ -164,7 +140,7 @@
                 </button>
             </li>
             <li class="menu-item">
-                <button class="menu-item-link">
+                <button class="menu-item-link calendarr">
                     <img class="svgs" src="../images/schedule.svg">
                     <div class="menu-item-text">
                         Calendar
@@ -172,16 +148,8 @@
                 </button>
 
             </li>
-            <li class="menu-item ">
-                <button class="menu-item-link">
-                    <img class="svgs" src="../images/inbox.svg">
-                    <div class="menu-item-text">
-                        Inbox
-                    </div>
-                </button>
-            </li>
             <li class="menu-item">
-                <button class="menu-item-link">
+                <button class="menu-item-link history">
                     <img class="svgs" src="../images/clock.svg">
                     <div class="menu-item-text">
                         History
@@ -190,7 +158,7 @@
             </li>
 
             <li class="menu-item">
-                <button class="menu-item-link">
+                <button class="menu-item-link finances">
                     <img class="svgs" src="../images/finance.svg">
                     <div class="menu-item-text">
                         Finances
@@ -199,7 +167,7 @@
             </li>
 
             <li class="menu-item">
-                <button class="menu-item-link">
+                <button class="menu-item-link help">
                     <img class="svgs" src="../images/info.svg">
                     <div class="menu-item-text">
                         Help
@@ -216,6 +184,45 @@
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div class="wrapper">
+
+        <div style="margin: 0px 24px">
+            <div class="main-header">
+                <h2 class="profile-font" style="font-size: 30px;">Bill Gates's Chart</h2>
+
+                <button type="button" class="more-options">
+                    <img src="../images/more.svg" class="more-options">
+                </button>
+
+                <span class="chart-view">
+                    <ul>
+                        <li>
+                            <span class="chart-view-header">Chart View</span>
+                            <div class="options-list">
+
+                                <div class="options-item" id="column">
+                                    Column view
+                                </div>
+                                <div class="options-item" id="bar">Bar view</div>
+                                <div class="options-item" id="area">Area view</div>
+                                <div class="options-item" id="spline">Spline view</div>
+                                <div class="options-item" id="pie">Pie view</div>
+                            </div>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+
+            <div class="class">
+                <div id="chartContainer"></div>
+                
+
+            </div>
+
+        </div>
+
     </div>
 </body>
 
