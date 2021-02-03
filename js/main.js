@@ -1,3 +1,5 @@
+import { showCourses } from "./courses.js"
+
 document.addEventListener("DOMContentLoaded", function(event) { 
 
     var account = `
@@ -111,13 +113,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
             </ul>
         </div>
     `
-
     var accounts = document.getElementsByClassName("account")
     var courses = document.getElementsByClassName("courses")
     var calendar = document.getElementsByClassName("calendarr")
-    var history = document.getElementsByClassName("history")
     var finances = document.getElementsByClassName("finances")
     var help = document.getElementsByClassName("help")
+
+    let defaultRoute = 'dashboard';
+    let routes = {
+    'account': () => {
+        accountHandler()
+    },
+    'dashboard': () => {
+        dashboardHandler()
+    },
+    'courses': () => {
+        courseHandler()
+        showCourses()
+    },
+    'calendarr': () => {
+        calendarHandler()
+    },
+    'history': () => {
+        historyHandler()
+    },
+    'finances': () => {
+        financesHandler()
+    },
+    'help': () => {
+        helpHandler()
+    }
+    };
+
+    let handleRouting = () => {
+        let currentUri = window.location.hash || false;
+        console.log(currentUri)
+        if (currentUri !== false) {
+            currentUri = currentUri.substring(1);
+        }
+        routes[currentUri || defaultRoute]();
+    };
+
+    window.addEventListener('load', handleRouting);
+
+    window.addEventListener('hashchange', handleRouting);
 
     const loadScript = src => {
         return new Promise((resolve, reject) => {
@@ -126,7 +165,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
           script.onload = resolve
           script.onerror = reject
           script.src = src
-          document.getElementsByClassName("slide-wrap")[0].appendChild(script)
+          script.type = "module"
+          document.getElementsByClassName("scripts")[0].innerHTML = ""
+          document.getElementsByClassName("scripts")[0].appendChild(script)
         //   document.head.append(script)
         })
       }
@@ -164,6 +205,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }) 
     };
 
+    var dashboardHandler = function(e) {
+        loadScript('../js/dashboard.js')
+        .then(() => {
+            console.log("dashboard.js loaded")
+        })
+        .catch(() =>{
+            console.log("dashboard.js error")
+        }) 
+    }
+
     var courseHandler = function(e) {
         toggleSlideMenu()
         document.getElementsByClassName("slide-wrap")[0].innerHTML = course
@@ -186,10 +237,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         </iframe>
         `
         document.getElementsByClassName("class")[0].innerHTML = calendar
-    };
-
-    var historyHandler = function(e) {
-        
     };
 
     var financesHandler = function(e) {
@@ -223,9 +270,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
     for (var i = 0; i < calendar.length; i++) {
         calendar[i].addEventListener('click', calendarHandler, false);
-    }
-    for (var i = 0; i < history.length; i++) {
-        history[i].addEventListener('click', historyHandler, false);
     }
     for (var i = 0; i < finances.length; i++) {
         finances[i].addEventListener('click', financesHandler, false);

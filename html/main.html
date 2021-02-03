@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
-    <script src="../js/main.js"></script>
-    <script src="../js/dashboard.js"></script>
+    <script type="module" src="../js/main.js"></script>
 </head>
 
 <body>
+    <div class="scripts">
+
+    </div>
     <header class="mobile-header">
         <button id="hamburger" type="button" class="mobile-header-hamburger">
             <img class="svgs" src="../images/hamburger.svg" style="width: 26px;">
@@ -33,9 +35,11 @@
                     </button>
                 </li>
                 <li class="menu-item">
-                    <button class="menu-item-link dashboard">
+                    <button class="menu-item-link dashboard" onclick="location.hash='#dashboard'">
                         <img class="svgs" src="../images/performance.svg">
-                        <div class="menu-item-text">Dashboard</div>
+                        <div class="menu-item-text">
+                            Dashboard
+                        </div>
                     </button>
                 </li>
                 <li class="menu-item">
@@ -47,7 +51,7 @@
                     </button>
                 </li>
                 <li class="menu-item">
-                    <button class="menu-item-link calendarr">
+                    <button class="menu-item-link calendarr" onclick="location.hash='#calendarr'">
                         <img class="svgs" src="../images/schedule.svg">
                         <div class="menu-item-text">
                             Calendar

@@ -371,13 +371,16 @@ function constructPages() {
     return temp
 }
 
-document.getElementById("slide-all-courses").addEventListener("click", function(){
+function showCourses(){
     document.getElementsByClassName("slide-menu")[0].style.display = 'none'
     document.getElementsByClassName("main-header")[0].innerHTML = header
     document.getElementsByClassName("class")[0].innerHTML = chooser + my_courses
-
     
     contentHandlers()
+}
+
+document.getElementById("slide-all-courses").addEventListener("click", function(){
+    location.hash='#courses'
 })
 
 document.addEventListener("click", function (e) {
@@ -400,3 +403,5 @@ document.addEventListener("click", function (e) {
         }
     }
 })
+
+export { showCourses };

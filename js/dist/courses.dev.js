@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.showCourses = showCourses;
 var header = "\n<h2 class=\"profile-font\" style=\"font-size: 30px;\">Bill Gates's Courses</h2>\n";
 var options = "\n<button type=\"button\" class=\"more-options\">\n    <img src=\"../images/more.svg\" class=\"more-options\">\n</button>\n\n<span class=\"chart-view\">\n    <ul>\n        <li>\n            <span class=\"chart-view-header\">Items in column</span>\n            <div class=\"options-list\">\n                <div class=\"options-item\" id=\"10\">\n                    10\n                </div>\n                <div class=\"options-item\" id=\"20\">20</div>\n                <div class=\"options-item\" id=\"30\">30</div>\n                <div class=\"options-item\" id=\"40\">40</div>\n                <div class=\"options-item\" id=\"50\">50</div>\n            </div>\n        </li>\n    </ul>\n</span>\n";
 var checkmark = '<svg name="IconCheck" viewBox="0 0 1920 1920" rotate="0" width="1em" height="1em" aria-hidden="true" role="presentation" focusable="false" class="checkmark" style="width: 1em; height: 1em;position: absolute; left: 7px;"> <g role="presentation"><path d="M1743.8579 267.012456L710.746654 1300.1237 176.005086 765.382131 0 941.387217 710.746654 1652.25843 1919.98754 443.142104z" fill-rule="evenodd" stroke="none" stroke-width="1"></path></g></svg>';
@@ -148,11 +152,15 @@ function constructPages() {
   return temp;
 }
 
-document.getElementById("slide-all-courses").addEventListener("click", function () {
+function showCourses() {
   document.getElementsByClassName("slide-menu")[0].style.display = 'none';
   document.getElementsByClassName("main-header")[0].innerHTML = header;
   document.getElementsByClassName("class")[0].innerHTML = chooser + my_courses;
   contentHandlers();
+}
+
+document.getElementById("slide-all-courses").addEventListener("click", function () {
+  location.hash = '#courses';
 });
 document.addEventListener("click", function (e) {
   if (e.target.className == "options-item") {
