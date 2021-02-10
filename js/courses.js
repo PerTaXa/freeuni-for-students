@@ -310,32 +310,35 @@ function refreshTableAndPager(tbl){
     document.getElementsByClassName("class")[0].insertAdjacentHTML('beforeend', page)
 }
 
-function contentHandlers(){
-    document.getElementById("all-courses").addEventListener("click", function(e){
-        document.getElementsByClassName("main-header")[0].innerHTML = header + options
+document.getElementsByClassName("slide-menu")[0].style.display = 'none'
+document.getElementsByClassName("main-header")[0].innerHTML = header
+document.getElementsByClassName("class")[0].innerHTML = chooser + my_courses
 
-        replaceCheckmark()
-        refreshTableAndPager(getAllTable())
-    })
+document.getElementById("all-courses").addEventListener("click", function(e){
+    document.getElementsByClassName("main-header")[0].innerHTML = header + options
 
-    document.getElementById("my-course").addEventListener("click", function(e){
-        deleteIfExists(["current-courses", "pager"])
-        document.getElementsByClassName("main-header")[0].innerHTML = header
-        document.getElementsByClassName("class")[0].insertAdjacentHTML('beforeend', my_courses)
-    })
+    replaceCheckmark()
+    refreshTableAndPager(getAllTable())
+})
 
-    document.getElementById("registered-courses").addEventListener("click", function(e){
-        document.getElementsByClassName("main-header")[0].innerHTML = header
-        refreshTableAndPager(getRegisteredTable())
-        deleteIfExists(["pager"])
-    })
+document.getElementById("my-course").addEventListener("click", function(e){
+    deleteIfExists(["current-courses", "pager"])
+    document.getElementsByClassName("main-header")[0].innerHTML = header
+    document.getElementsByClassName("class")[0].insertAdjacentHTML('beforeend', my_courses)
+})
 
-    document.getElementById("liked-courses").addEventListener("click", function(e){
-        document.getElementsByClassName("main-header")[0].innerHTML = header
-        refreshTableAndPager(getRegisteredTable())
-        deleteIfExists(["pager"])
-    })
-}
+document.getElementById("registered-courses").addEventListener("click", function(e){
+    document.getElementsByClassName("main-header")[0].innerHTML = header
+    refreshTableAndPager(getRegisteredTable())
+    deleteIfExists(["pager"])
+})
+
+document.getElementById("liked-courses").addEventListener("click", function(e){
+    document.getElementsByClassName("main-header")[0].innerHTML = header
+    refreshTableAndPager(getRegisteredTable())
+    deleteIfExists(["pager"])
+})
+
 
 function constructPages() {
     deleteIfExists("pager")
@@ -371,18 +374,6 @@ function constructPages() {
     return temp
 }
 
-function showCourses(){
-    document.getElementsByClassName("slide-menu")[0].style.display = 'none'
-    document.getElementsByClassName("main-header")[0].innerHTML = header
-    document.getElementsByClassName("class")[0].innerHTML = chooser + my_courses
-    
-    contentHandlers()
-}
-
-document.getElementById("slide-all-courses").addEventListener("click", function(){
-    location.hash='#courses'
-})
-
 document.addEventListener("click", function (e) {
     if (e.target.className == "options-item") {
         if(document.getElementById("chartContainer") != null){return}
@@ -403,5 +394,3 @@ document.addEventListener("click", function (e) {
         }
     }
 })
-
-export { showCourses };

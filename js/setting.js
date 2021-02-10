@@ -233,47 +233,48 @@ var value = document.getElementsByClassName("profile-value")
 var input = document.getElementsByClassName("profile-input")
 var select = document.getElementsByClassName("profile-select")
 
-function contentHandlers(){
-    document.getElementById("edit-settings").addEventListener("click", function(){
-        for (var i = 0; i < value.length; i++) {
-            value[i].style.display = 'none'
-        }
-        for (var i = 0; i < input.length; i++) {
-            input[i].style.display = 'block'
-        }
-        for (var i = 0; i < select.length; i++) {
-            select[i].style.display = 'block'
-        }
-        document.getElementsByClassName("update-settings")[0].style.display = 'block'
-    })
+// document.getElementsByClassName("slide-menu")[0].style.display = 'none'
+document.getElementsByClassName("main-header")[0].innerHTML = main_header
+document.getElementsByClassName("class")[0].innerHTML = settings
 
-    document.getElementById("cancel").addEventListener("click", function(){
-        for (var i = 0; i < value.length; i++) {
-            value[i].style.display = 'block'
-        }
-        for (var i = 0; i < input.length; i++) {
-            input[i].style.display = 'none'
-        }
-        for (var i = 0; i < select.length; i++) {
-            select[i].style.display = 'none'
-        }
-        document.getElementsByClassName("update-settings")[0].style.display = 'none'
-    })
-
-    document.getElementById("update-settings").addEventListener("click", function(){
-        for(var i = 1; i <= 6; i++){
-            document.getElementById(`profile-value${i}`).innerHTML = document.getElementById(`profile-input${i}`).value
-        }
-        document.getElementById("cancel").click()
-    })
-}
-
-document.getElementById("settings").addEventListener("click", function(){
-    document.getElementsByClassName("slide-menu")[0].style.display = 'none'
-    document.getElementsByClassName("main-header")[0].innerHTML = main_header
-    document.getElementsByClassName("class")[0].innerHTML = settings
-    contentHandlers()
+document.getElementById("edit-settings").addEventListener("click", function(){
+    for (var i = 0; i < value.length; i++) {
+        value[i].style.display = 'none'
+    }
+    for (var i = 0; i < input.length; i++) {
+        input[i].style.display = 'block'
+    }
+    for (var i = 0; i < select.length; i++) {
+        select[i].style.display = 'block'
+    }
+    document.getElementsByClassName("update-settings")[0].style.display = 'block'
 })
+
+document.getElementById("cancel").addEventListener("click", function(){
+    for (var i = 0; i < value.length; i++) {
+        value[i].style.display = 'block'
+    }
+    for (var i = 0; i < input.length; i++) {
+        input[i].style.display = 'none'
+    }
+    for (var i = 0; i < select.length; i++) {
+        select[i].style.display = 'none'
+    }
+    document.getElementsByClassName("update-settings")[0].style.display = 'none'
+})
+
+document.getElementById("update-settings").addEventListener("click", function(){
+    for(var i = 1; i <= 6; i++){
+        document.getElementById(`profile-value${i}`).innerHTML = document.getElementById(`profile-input${i}`).value
+    }
+    document.getElementById("cancel").click()
+})
+
+
+
+
+    
+
 
 
 

@@ -25,7 +25,151 @@ var main_header = `
 `
 var content = `
     <div id="chartContainer"></div>
+    <table style="border-collapse: collapse; width: 28.8443%; margin-left: auto; margin-right: auto;">
+        <tbody>
+        <tr>
+                <td style="width: 20%;">Faculty</td>
+                <td style="width: 13%; text-align: center;">MACS</td>
+            </tr>
+            <tr>
+                <td style="width: 20%;">GPA</td>
+                <td style="width: 13%; text-align: center;">3.52</td>
+            </tr>
+            <tr>
+                <td style="width: 20%;">Credits </td>
+                <td style="width: 13%; text-align: center;">195/240</td>
+            </tr>
+            
+            <tr>
+                <td style="width: 20%;">Student Status</td>
+                <td style="width: 13%; text-align: center;">Active</td>
+            </tr>
+
+            
+        </tbody>
+    </table>
+
+    <h2 style="text-align: left;">Recent Activity</h2>
+    <div style="background-color: black; height: 1px;margin-bottom: 25px;"></div>
+
+
+    <table class="current-courses">
+    <thead>
+        <tr>
+            <th class="courses-course">Class</th>
+            <th class="courses-course">Activity</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td class="courses-course">
+                Natural Language Processing
+            </td>
+            <td class="courses-course">
+                <div class="assignment_content" style="margin: 0">
+                    <a> Midterm 2 </a>
+                    <div class="assignment_details">                                 
+                        <span class="assignment_status">
+                            Dec 21, 2020 at 8:30pm
+                        </span>
+                        <span class="assignment_status">
+                            97.5/100
+                        </span>
+                        44.56%
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="courses-course">
+                Distributional Systems
+            </td>
+            <td class="courses-course">
+                <div class="assignment_content" style="margin: 0">
+                    <a> Midterm 1 </a>
+                    <div class="assignment_details">                                 
+                        <span class="assignment_status">
+                            Dec 7, 2020 at 9:30pm
+                        </span>
+                        <span class="assignment_status">
+                            87.5/100
+                        </span>
+                        34.56%
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="courses-course">
+                Web Development
+            </td>
+            <td class="courses-course">
+                <div class="assignment_content" style="margin: 0">
+                    <a> Midterm 1 </a>
+                    <div class="assignment_details">                                 
+                        <span class="assignment_status">
+                            Nov 20, 2020 at 5:30pm
+                        </span>
+                        <span class="assignment_status">
+                            81.5/100
+                        </span>
+                        24.56%
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="courses-course">
+                Natural Language Processing
+            </td>
+            <td class="courses-course">
+                <div class="assignment_content" style="margin: 0">
+                    <a> Assignment2 </a>
+                    <div class="assignment_details">                                 
+                        <span class="assignment_status">
+                            Nov 7, 2020 at 2:30pm
+                        </span>
+                        <span class="assignment_status">
+                            91.5/100
+                        </span>
+                        14.56%
+                    </div>
+                </div>
+            </td>
+            
+        </tr>
+
+        <tr>
+            <td class="courses-course">
+                Web Development
+            </td>
+            <td class="courses-course">
+                <div class="assignment_content" style="margin: 0">
+                    <a> Assignment1 </a>
+                    <div class="assignment_details">                                  
+                        <span class="assignment_status">
+                            Oct 15, 2020 at 2:30pm
+                        </span>
+                        <span class="assignment_status">
+                            71.5/100
+                        </span>
+                        12.73%
+                    </div>
+                </div>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+
+   
 `
+
+
 
 var dashboards = document.getElementsByClassName("dashboard")
 

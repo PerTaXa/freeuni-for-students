@@ -4,51 +4,44 @@ var main_header = "\n<h2 class=\"profile-font\" style=\"font-size: 30px;\">Bill 
 var settings = "\n<div class=\"settings\">\n<div class=\"content\">\n    <div style=\"padding: 24px;\">\n        <a href=\"/home.....\" title=\"Click to change profile pic\" class=\"profile-pic\"></a>\n        <h1 class=\"settings-header\">\n            Bill Gates's Settings\n        </h1>\n        <form action=\"/home.....\" method=\"POST\">\n            <table>\n                <tbody>\n                    <tr>\n                        <th>\n                            <label class=\"profile-label\">\n                                Full Name:*\n                            </label>\n                        </th>\n                        <td>\n                            <div class=\"profile-value\" id=\"profile-value1\">Bill Gates</div>\n                            <input type=\"text\" value=\"Bill Gates\" class=\"profile-input\" id=\"profile-input1\"/>\n                            <div class=\"profile-font\">This name\n                                will be used for grading.</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\n                            <label class=\"profile-label\">\n                                Display Name:\n                            </label>\n                        </th>\n                        <td>\n                            <div class=\"profile-value\" id=\"profile-value2\">Bill Gates</div>\n                            <input type=\"text\" value=\"Bill Gates\"  id=\"profile-input2\"\n                                class=\"profile-input\" /> \n                                <div class=\"profile-font\">\n                                People will see\n                                this name in discussions, messages and\n                                comments.</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\n                            <label class=\"profile-label\">\n                                Sortable Name:\n                            </label>\n                        </th>\n                        <td>\n                            <div class=\"profile-value\" id=\"profile-value3\">Gates, Bill</div>\n                            <input size=\"30\" type=\"text\" value=\"Gates, Bill\"\n                                class=\"profile-input\"  id=\"profile-input3\"/> \n                                <div class=\"profile-font\">This name appears\n                                in sorted lists.</div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\n                            <label class=\"profile-label\">\n                                Pronouns:\n                            </label>\n                        </th>\n                        <td class=\"profile-td\">\n                            <div class=\"profile-value\" id=\"profile-value4\">None</div>\n                            <div>\n                                <select class=\"profile-select\" id=\"profile-input4\">\n                                    <option value=\"None\">\n                                        None\n                                    </option>\n                                    <option value=\"she/her/hers\">\n                                        she/her/hers\n                                    </option>\n                                    <option value=\"he/him/his\">\n                                        he/him/his\n                                    </option>\n                                    <option value=\"they/them/theirs\">\n                                        they/them/theirs\n                                    </option>\n                                    <option value=\"other\">\n                                        other\n                                    </option>\n                                </select>\n                            </div>\n                            <div class=\"profile-font\">\n                                This pronoun will appear\n                                after your name when enabled\n                            </div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\n                            <label class=\"profile-label\">\n                                Language:\n                            </label>\n                        </th>\n                        <td class=\"profile-td\">\n                            <div class=\"profile-value\" id=\"profile-value5\">English (US)</div>\n                            <div><select class=\"profile-select\" id=\"profile-input5\">\n                                    <option value=\"English (US)\">\n                                        English (US)\n                                    </option>\n                                    <option value=\"Espa\xF1ol\">\n                                        Espa\xF1ol\n                                    </option>\n                                    <option value=\"Fran\xE7ais\">\n                                        Fran\xE7ais\n                                    </option>\n                                </select> </div>\n                        </td>\n                    </tr>\n                    <tr>\n                        <th>\n                            <label class=\"profile-label\">\n                                Time Zone:\n                            </label>\n                        </th>\n                        <td class=\"profile-td\">\n                            <div class=\"profile-value\" id=\"profile-value6\">Eastern Time (US &amp; Canada)</div>\n                            <div><select class=\"profile-select\" id=\"profile-input6\">\n                                    <option value=\"Eastern Time (US &amp; Canada)\">\n                                        Eastern Time (US &amp; Canada)\n                                    </option>\n                                    <option value=\"Berlin\">\n                                        Berlin (+01:00/+02:00)\n                                    </option>\n                                    <option value=\"Dublin\">\n                                        Dublin (+01:00/+00:00)\n                                    </option>\n                                    <option value=\"Prague\">\n                                        Prague (+01:00/+02:00)\n                                    </option>\n                                    <option value=\"Zurich\">\n                                        Zurich (+01:00/+02:00)\n                                    </option>\n                                    <option value=\"Moscow\">\n                                        Moscow (+03:00)\n                                    </option>\n                                    <option value=\"St. Petersburg\">\n                                        St. Petersburg (+03:00)\n                                    </option>\n                                    <option value=\"Tbilisi\">\n                                        Tbilisi (+04:00)\n                                    </option>\n                                    <option value=\"Yerevan\">\n                                        Yerevan (+04:00)\n                                    </option>\n                                </select></div>\n                        </td>\n                    </tr>\n                </tbody>\n            </table>\n        </form>\n    </div>\n\n\n\n        <div class=\"update-settings\">\n            <button id=\"cancel\" class=\"gray-button\" style=\"width: 80px\">\n                    Cancel\n            </button>\n            <button id=\"update-settings\"type=\"submit\" class=\"submit-button\">\n                Update Settings\n            </button>\n        </div>\n    </div>\n\n    <div class=\"add-info\">\n        <div class=\"right-side\">\n            <h2 class=\"settings-header\">Ways to Contact</h2>\n            <div>\n                <table class=\"profile-add-table\">\n                    <thead>\n                        <tr>\n                            <th class=\"profile-add-thead\">\n                                Email Addresses\n                            </th>\n                        </tr>\n                    </thead>\n                    <tbody>\n                        <tr>\n                            <th class=\"profile-add-th\">\n                                bgates17@freeuni.edu.ge\n                            </th>\n                        </tr>\n                        <tr>\n                            <th class=\"profile-add-th\">\n                                <a style=\"color: rgb(188, 24, 38);\">billygates@gmail.com</a>\n                            </th>\n                        </tr>\n                        <tr>\n                            <td class=\"profile-add-td\">\n                                <a style=\"color: rgb(188, 24, 38);\">+ Email Address</a>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n                <div>\n                    \n                    <table>\n                        <thead>\n                            <tr>\n                                <th class=\"profile-add-thead\">\n                                    Other Contacts\n                                </th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr>\n                                <td class=\"profile-add-td\">\n                                    <a style=\"color: rgb(188, 24, 38);\">+ Contact\n                                        Method</a>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </div>\n            </div>\n\n            <div>\n                <hr />\n                <button id=\"edit-settings\" class=\"gray-button\">\n                    <img src=\"../images/pen.svg\" style=\"height: 15px;\">\n                    Edit Settings\n                </button>\n            </div>\n\n        </div>\n    </div>\n</div>\n";
 var value = document.getElementsByClassName("profile-value");
 var input = document.getElementsByClassName("profile-input");
-var select = document.getElementsByClassName("profile-select");
+var select = document.getElementsByClassName("profile-select"); // document.getElementsByClassName("slide-menu")[0].style.display = 'none'
 
-function contentHandlers() {
-  document.getElementById("edit-settings").addEventListener("click", function () {
-    for (var i = 0; i < value.length; i++) {
-      value[i].style.display = 'none';
-    }
+document.getElementsByClassName("main-header")[0].innerHTML = main_header;
+document.getElementsByClassName("class")[0].innerHTML = settings;
+document.getElementById("edit-settings").addEventListener("click", function () {
+  for (var i = 0; i < value.length; i++) {
+    value[i].style.display = 'none';
+  }
 
-    for (var i = 0; i < input.length; i++) {
-      input[i].style.display = 'block';
-    }
+  for (var i = 0; i < input.length; i++) {
+    input[i].style.display = 'block';
+  }
 
-    for (var i = 0; i < select.length; i++) {
-      select[i].style.display = 'block';
-    }
+  for (var i = 0; i < select.length; i++) {
+    select[i].style.display = 'block';
+  }
 
-    document.getElementsByClassName("update-settings")[0].style.display = 'block';
-  });
-  document.getElementById("cancel").addEventListener("click", function () {
-    for (var i = 0; i < value.length; i++) {
-      value[i].style.display = 'block';
-    }
+  document.getElementsByClassName("update-settings")[0].style.display = 'block';
+});
+document.getElementById("cancel").addEventListener("click", function () {
+  for (var i = 0; i < value.length; i++) {
+    value[i].style.display = 'block';
+  }
 
-    for (var i = 0; i < input.length; i++) {
-      input[i].style.display = 'none';
-    }
+  for (var i = 0; i < input.length; i++) {
+    input[i].style.display = 'none';
+  }
 
-    for (var i = 0; i < select.length; i++) {
-      select[i].style.display = 'none';
-    }
+  for (var i = 0; i < select.length; i++) {
+    select[i].style.display = 'none';
+  }
 
-    document.getElementsByClassName("update-settings")[0].style.display = 'none';
-  });
-  document.getElementById("update-settings").addEventListener("click", function () {
-    for (var i = 1; i <= 6; i++) {
-      document.getElementById("profile-value".concat(i)).innerHTML = document.getElementById("profile-input".concat(i)).value;
-    }
+  document.getElementsByClassName("update-settings")[0].style.display = 'none';
+});
+document.getElementById("update-settings").addEventListener("click", function () {
+  for (var i = 1; i <= 6; i++) {
+    document.getElementById("profile-value".concat(i)).innerHTML = document.getElementById("profile-input".concat(i)).value;
+  }
 
-    document.getElementById("cancel").click();
-  });
-}
-
-document.getElementById("settings").addEventListener("click", function () {
-  document.getElementsByClassName("slide-menu")[0].style.display = 'none';
-  document.getElementsByClassName("main-header")[0].innerHTML = main_header;
-  document.getElementsByClassName("class")[0].innerHTML = settings;
-  contentHandlers();
+  document.getElementById("cancel").click();
 });

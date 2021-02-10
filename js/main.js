@@ -1,4 +1,4 @@
-import { showCourses } from "./courses.js"
+// import { showCourses } from "./courses.js"
 
 document.addEventListener("DOMContentLoaded", function(event) { 
 
@@ -7,9 +7,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
             <div class="slide-menu-avatar"><img src="../images/bill_gates.jpg"> </div>
             <div class="menu-item-text slide-menu-text"> Bill Gates </div>
         </div>
-        <div style="background-color: black; height: 1px;margin-top: 25px;"></div><button class="slide-item-link">
-            <div id="profile" class="menu-item-text slide-item-text"> Profile</div>
-        </button><button class="slide-item-link">
+        <div style="background-color: black; height: 1px;margin-top: 25px;"></div>
+        <button class="slide-item-link">
             <div id="settings" class="menu-item-text slide-item-text"> Settings </div>
         </button> 
     `
@@ -113,23 +112,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
             </ul>
         </div>
     `
+    var dashboard = document.getElementsByClassName("dashboard")
     var accounts = document.getElementsByClassName("account")
     var courses = document.getElementsByClassName("courses")
     var calendar = document.getElementsByClassName("calendarr")
     var finances = document.getElementsByClassName("finances")
     var help = document.getElementsByClassName("help")
+    var logouts = document.getElementsByClassName("logout-but")
 
     let defaultRoute = 'dashboard';
     let routes = {
     'account': () => {
-        accountHandler()
+        accountsHandler()
     },
     'dashboard': () => {
         dashboardHandler()
     },
     'courses': () => {
         courseHandler()
-        showCourses()
+        // showCourses()
     },
     'calendarr': () => {
         calendarHandler()
@@ -151,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (currentUri !== false) {
             currentUri = currentUri.substring(1);
         }
+        closeMenus()
         routes[currentUri || defaultRoute]();
     };
 
@@ -165,7 +167,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
           script.onload = resolve
           script.onerror = reject
           script.src = src
-          script.type = "module"
           document.getElementsByClassName("scripts")[0].innerHTML = ""
           document.getElementsByClassName("scripts")[0].appendChild(script)
         //   document.head.append(script)
@@ -190,25 +191,38 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     }
 
-    var accountHandler = function(e) {
-        toggleSlideMenu()
-        document.getElementsByClassName("slide-wrap")[0].innerHTML = account
-        
-        
+    function closeMenus(){
+        document.getElementsByClassName("slide-menu")[0].style.display = 'none'
+        document.getElementsByClassName("mobile-menu")[0].style.display = 'none'
+    }
+
+    var accountsHandler = function(e) {
         loadScript('../js/setting.js')
         .then(() => {
             loadedSettings = true
             console.log("setting.js loaded")
+            closeMenus()
         })
         .catch(() =>{
             console.log("setting.js error")
         }) 
+    }
+
+    var accountHandler = function(e) {
+        toggleSlideMenu()
+        document.getElementsByClassName("slide-wrap")[0].innerHTML = account
+        
+        document.getElementById("settings").addEventListener("click", function(){
+            location.hash='#account'
+        })
+        
     };
 
     var dashboardHandler = function(e) {
         loadScript('../js/dashboard.js')
         .then(() => {
             console.log("dashboard.js loaded")
+            closeMenus()
         })
         .catch(() =>{
             console.log("dashboard.js error")
@@ -216,16 +230,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     var courseHandler = function(e) {
-        toggleSlideMenu()
-        document.getElementsByClassName("slide-wrap")[0].innerHTML = course
-
         loadScript('../js/courses.js')
         .then(() => {
-            loadedCourses = true
             console.log("courses.js loaded")
+            closeMenus()
         })
         .catch(() =>{
             console.log("courses.js error")
+        })
+        
+    };
+
+    var coursesHandler = function(e) {
+        toggleSlideMenu()
+        document.getElementsByClassName("slide-wrap")[0].innerHTML = course
+
+        document.getElementById("slide-all-courses").addEventListener("click", function(){
+            closeMenus()
+            location.hash='#courses'
         })
     };
 
@@ -249,6 +271,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementsByClassName("slide-wrap")[0].innerHTML = heelp
     };
 
+    var logoutHandler = function(e) {
+        window.location.replace("login.html")
+    };
+
     document.getElementById("hamburger").addEventListener("click", function(){
         toggleMobileMenu()
     })
@@ -264,9 +290,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     for (var i = 0; i < accounts.length; i++) {
         accounts[i].addEventListener('click', accountHandler, false);
     }
+
+    for (var i = 0; i < dashboard.length; i++) {
+        dashboard[i].addEventListener('click', closeMenus, false);
+    }
     
     for (var i = 0; i < courses.length; i++) {
-        courses[i].addEventListener('click', courseHandler, false);
+        courses[i].addEventListener('click', coursesHandler, false);
     }
     for (var i = 0; i < calendar.length; i++) {
         calendar[i].addEventListener('click', calendarHandler, false);
@@ -278,13 +308,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
         help[i].addEventListener('click', helpHandler, false);
     }
 
+    for (var i = 0; i < logouts.length; i++) {
+        logouts[i].addEventListener('click', logoutHandler, false);
+    }
+
     document.addEventListener("click", function(e){
         if(e.target.className.includes("course-click")){
             
             loadScript('../js/class.js')
             .then(() => {
-                loadedCourses = true
                 console.log("class.js loaded")
+                closeMenus()
             })
             .catch(() =>{
                 console.log("class.js error")
@@ -292,3 +326,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
     })
 });
+
+
+

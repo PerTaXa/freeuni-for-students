@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
-    <script type="module" src="../js/main.js"></script>
+    <script src="../js/main.js"></script>
 </head>
 
 <body>
@@ -59,15 +59,7 @@
                     </button>
 
                 </li>
-                <li class="menu-item">
-                    <button class="menu-item-link history">
-                        <img class="svgs" src="../images/clock.svg">
-                        <div class="menu-item-text">
-                            History
-                        </div>
-                    </button>
-                </li>
-
+                
                 <li class="menu-item">
                     <button class="menu-item-link finances">
                         <img class="svgs" src="../images/finance.svg">
@@ -91,7 +83,7 @@
         <div class="logout">
             <ul class="menu">
                 <li class="menu-item ">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link logout-but">
                         <img class="svgs" src="../images/logout.svg">
                     </button>
                 </li>
@@ -130,7 +122,7 @@
                 </button>
             </li>
             <li class="menu-item">
-                <button class="menu-item-link dashboard">
+                <button class="menu-item-link dashboard" onclick="location.hash='#dashboard'">
                     <img class="svgs" src="../images/performance.svg">
                     <div class="menu-item-text">Dashboard</div>
                 </button>
@@ -151,14 +143,6 @@
                     </div>
                 </button>
 
-            </li>
-            <li class="menu-item">
-                <button class="menu-item-link history">
-                    <img class="svgs" src="../images/clock.svg">
-                    <div class="menu-item-text">
-                        History
-                    </div>
-                </button>
             </li>
 
             <li class="menu-item">
@@ -182,7 +166,7 @@
         <div class="logout">
             <ul class="menu">
                 <li class="menu-item ">
-                    <button class="menu-item-link">
+                    <button class="menu-item-link logout-but">
                         <img class="svgs" src="../images/logout.svg">
                     </button>
                 </li>
