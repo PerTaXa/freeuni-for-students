@@ -396,8 +396,7 @@ table td {
     vertical-align: middle;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-color: rgb(229, 229, 229);
-    white-space: nowrap;
+    border-color: darkgray;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -594,6 +593,7 @@ table td {
   font-family: 'Open Sans';
   text-transform: uppercase;
   cursor: pointer;
+  width: 184px;
 }
 
 .btn-flip:hover::after{
@@ -726,5 +726,13 @@ table td {
 
     .settings {
         flex-direction: column;
+    }
+
+    .courses-course {
+        width: 30%;
+    }
+    
+    .courses-grade {
+        width: 30%;
     }
 }

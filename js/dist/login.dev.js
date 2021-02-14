@@ -1,14 +1,19 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", function (event) {
+  alert("user: admin@gmail.com\npassword: admin");
   document.getElementById("button").addEventListener("click", function () {
     var form = document.getElementById('login-info');
-    var data = new FormData(form);
+    fetch('../json/login.json').then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      var formData = new FormData(form);
 
-    if (data.get("email") === "admin@gmail.com" && data.get("password") === "admin") {
-      window.location.replace("main.html");
-    } else {
-      document.getElementsByClassName("incorrect")[0].style.display = 'block';
-    }
+      if (formData.get("email") === data["username"] && formData.get("password") === data["password"]) {
+        window.location.replace("main.html");
+      } else {
+        document.getElementsByClassName("incorrect")[0].style.display = 'block';
+      }
+    });
   });
 });

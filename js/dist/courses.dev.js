@@ -6,7 +6,10 @@ var checkmark = '<svg name="IconCheck" viewBox="0 0 1920 1920" rotate="0" width=
 var chooser = "\n<div id=\"chooser\">\n    <div class=\"chooser-item\" id=\"my-course\" style=\"width: 157px;\">My Courses</div>\n    <div class=\"chooser-item\" id=\"all-courses\" style=\"width: 256px;\">All Courses</div>\n    <div class=\"chooser-item\" id=\"registered-courses\" style=\"width: 257px;\">Registered Courses</div>\n    <div class=\"chooser-item\" id=\"liked-courses\" style=\"width: 257px;\">Liked Courses</div>\n</div>\n";
 var my_courses = "\n<table class=\"current-courses\">\n    <thead>\n        <tr>\n            <th class=\"courses-favorite\">III</th>\n            <th class=\"courses-course\">Class</th>\n            <th class=\"courses-credits\">Credits</th>\n            <th class=\"courses-term\">Term</th>\n            <th class=\"courses-enrolled\">Enrolled as</th>\n            <th class=\"courses-grade\">Grade</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">Web development</a>\n            </td>\n            <td class=\"courses-credits\">5</td>\n            <td class=\"courses-term\">III</td>\n            <td class=\"courses-enrolled\">Student</td>\n            <td class=\"courses-grade\">-</td>\n        </tr>\n        <tr>\n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">Natural Language processing(NLP)</a>\n            </td>\n            <td class=\"courses-credits\">6</td>\n            <td class=\"courses-term\">III</td>\n            <td class=\"courses-enrolled\">Student</td>\n            <td class=\"courses-grade\">-</td>\n        </tr>\n\n    </tbody>\n</table>\n\n<table class=\"current-courses\">\n    <thead>\n        <tr>\n            <th class=\"courses-favorite\">II</th>\n            <th class=\"courses-course\">Class</th>\n            <th class=\"courses-credits\">Credits</th>\n            <th class=\"courses-term\">Term</th>\n            <th class=\"courses-enrolled\">Enrolled as</th>\n            <th class=\"courses-grade\">Grade</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">Operating systems engineering</a>\n            </td>\n            <td class=\"courses-credits\">6</td>\n            <td class=\"courses-term\">II</td>\n            <td class=\"courses-enrolled\">Student</td>\n            <td class=\"courses-grade\">A</td>\n        </tr>\n        <tr>\n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">Mobile Development (Android)</a>\n            </td>\n            <td class=\"courses-credits\">6</td>\n            <td class=\"courses-term\">II</td>\n            <td class=\"courses-enrolled\">Student</td>\n            <td class=\"courses-grade\">B</td>\n        </tr>\n\n        <tr>\n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">NAND 2 TETRIS</a>\n            </td>\n            <td class=\"courses-credits\">6</td>\n            <td class=\"courses-term\">II</td>\n            <td class=\"courses-enrolled\">Student</td>\n            <td class=\"courses-grade\">A</td>\n        </tr>\n\n    </tbody>\n</table>\n\n<table class=\"current-courses\">\n    <thead>\n        <tr>\n            <th class=\"courses-favorite\">I</th>\n            <th class=\"courses-course\">Class</th>\n            <th class=\"courses-credits\">Credits</th>\n            <th class=\"courses-term\">Term</th>\n            <th class=\"courses-enrolled\">Enrolled as</th>\n            <th class=\"courses-grade\">Grade</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">Machine learning</a>\n            </td>\n            <td class=\"courses-credits\">6</td>\n            <td class=\"courses-term\">I</td>\n            <td class=\"courses-enrolled\">Student</td>\n            <td class=\"courses-grade\">C</td>\n        </tr>\n        <tr>\n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">Modern political ideas</a>\n            </td>\n            <td class=\"courses-credits\">4</td>\n            <td class=\"courses-term\">I</td>\n            <td class=\"courses-enrolled\">Student</td>\n            <td class=\"courses-grade\">D</td>\n        </tr>\n\n        <tr>\n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">Artificial intelligence</a>\n            </td>\n            <td class=\"courses-credits\">6</td>\n            <td class=\"courses-term\">I</td>\n            <td class=\"courses-enrolled\">Student</td>\n            <td class=\"courses-grade\">A</td>\n        </tr>\n\n    </tbody>\n</table>\n";
 var pager = "\n<nav class=\"pager\">\n    <ul class=\"pager-ul\">\n        <li class=\"page-item\">1</li>\n        <li class=\"page-item\">2</li>\n        <li class=\"page-item\">3</li>\n        <li class=\"page-item\">...</li>\n        <li class=\"page-item\">5</li>\n    </ul>\n</nav>\n";
-var allCourses = [["Advanced algorithms I", 6, 4, "MACS"], ["Advanced algorithms II", 6, 3, "MACS"], ["Game development Unity", 5, 2, "MACS"], ["Theory of informatics", 5, 2, "MACS"], ["Machine Vision", 5, 3, "MACS"], ["Multicore programming", 5, 5, "MACS"]];
+var allCourses = [["Advanced algorithms I", 6, 4, "MACS", "Unregistered", "Register"], ["Advanced algorithms II", 6, 3, "MACS", "Unregistered", "Register"], ["Game development Unity", 5, 2, "MACS", "Unregistered", "Register"], ["Theory of informatics", 5, 2, "MACS", "Unregistered", "Register"], ["Machine Vision", 5, 3, "MACS", "Unregistered", "Register"], ["Multicore programming", 5, 5, "MACS", "Unregistered", "Register"]];
+var registered = JSON.parse(JSON.stringify(allCourses));
+var liked = JSON.parse(JSON.stringify(allCourses));
+var currentTab = "my";
 var page = 1;
 var view = 10;
 
@@ -41,21 +44,31 @@ function getAllTable() {
 
   for (var i = view * page; i < Math.min((page + 1) * view, allCourses.length); i++) {
     var tr = document.createElement('tr');
-    tr.innerHTML = "  \n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">".concat(allCourses[i][0], "</a>\n            </td>\n            <td class=\"courses-credits\">").concat(allCourses[i][1], "</td>\n            <td class=\"courses-term\">").concat(allCourses[i][2], "</td>\n            <td class=\"courses-enrolled\">").concat(allCourses[i][3], "</td>\n            <td class=\"courses-grade\" id=\"register").concat(i, "\"><button  class=\"btn-flip\" data-back=\"Register\" data-front=\"Unregistered\"></button></td>\n        ");
+    tr.innerHTML = "  \n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a class=\"course-click\">".concat(allCourses[i][0], "</a>\n            </td>\n            <td class=\"courses-credits\">").concat(allCourses[i][1], "</td>\n            <td class=\"courses-term\">").concat(allCourses[i][2], "</td>\n            <td class=\"courses-enrolled\">").concat(allCourses[i][3], "</td>\n            <td class=\"courses-grade\"><button id=\"register").concat(i, "\" class=\"btn-flip\" data-back=\"").concat(allCourses[i][5], "\" data-front=\"").concat(allCourses[i][4], "\"></button></td>\n        ");
     tbl.appendChild(tr);
   }
 
   return tbl;
 }
 
-function getRegisteredTable() {
+function getRegisteredTable(favorites) {
   var tbl = document.createElement('table');
   tbl.className = "current-courses";
   tbl.tHead = getThead();
+  var arr = registered;
 
-  for (var i = 0; i < 5; i++) {
+  if (favorites) {
+    arr = liked;
+  }
+
+  for (var i = 0; i < arr.length; i++) {
     var tr = document.createElement('tr');
-    tr.innerHTML = "  \n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a href=\"/courses/....\">".concat(allCourses[i][0], "</a>\n            </td>\n            <td class=\"courses-credits\">").concat(allCourses[i][1], "</td>\n            <td class=\"courses-term\">").concat(allCourses[i][2], "</td>\n            <td class=\"courses-enrolled\">").concat(allCourses[i][3], "</td>\n            <td class=\"courses-grade\" id=\"register").concat(i, "\"><button class=\"btn-flip\" data-back=\"Unregister\" data-front=\"Registered\"></button></td>\n        ");
+    tr.innerHTML = "  \n            <td class=\"courses-favorite\">\n                <span class=\"favorite-icon\" title=\"Click to add to the courses menu.\">\n                </span>\n            </td>\n            <td class=\"courses-course\">\n                <a href=\"/courses/....\">".concat(arr[i][0], "</a>\n            </td>\n            <td class=\"courses-credits\">").concat(arr[i][1], "</td>\n            <td class=\"courses-term\">").concat(arr[i][2], "</td>\n            <td class=\"courses-enrolled\">").concat(arr[i][3], "</td>\n            <td class=\"courses-grade\"><button id=\"register").concat(i, "\" class=\"btn-flip\" data-back=\"Unregister\" data-front=\"Registered\"></button></td>\n        ");
+
+    if (favorites) {
+      tr.childNodes[1].childNodes[1].style.backgroundImage = "url(../images/fill-star.svg)";
+    }
+
     tbl.appendChild(tr);
   }
 
@@ -90,22 +103,26 @@ document.getElementsByClassName("main-header")[0].innerHTML = header;
 document.getElementsByClassName("class")[0].innerHTML = chooser + my_courses;
 document.getElementById("all-courses").addEventListener("click", function (e) {
   document.getElementsByClassName("main-header")[0].innerHTML = header + options;
+  currentTab = "all";
   replaceCheckmark();
   refreshTableAndPager(getAllTable());
 });
 document.getElementById("my-course").addEventListener("click", function (e) {
   deleteIfExists(["current-courses", "pager"]);
+  currentTab = "my";
   document.getElementsByClassName("main-header")[0].innerHTML = header;
   document.getElementsByClassName("class")[0].insertAdjacentHTML('beforeend', my_courses);
 });
 document.getElementById("registered-courses").addEventListener("click", function (e) {
   document.getElementsByClassName("main-header")[0].innerHTML = header;
-  refreshTableAndPager(getRegisteredTable());
+  currentTab = "reg";
+  refreshTableAndPager(getRegisteredTable(false));
   deleteIfExists(["pager"]);
 });
 document.getElementById("liked-courses").addEventListener("click", function (e) {
   document.getElementsByClassName("main-header")[0].innerHTML = header;
-  refreshTableAndPager(getRegisteredTable());
+  currentTab = "liked";
+  refreshTableAndPager(getRegisteredTable(true));
   deleteIfExists(["pager"]);
 });
 
@@ -173,6 +190,41 @@ document.addEventListener("click", function (e) {
       e.target.style.backgroundImage = "url(../images/star.svg)";
     } else {
       e.target.style.backgroundImage = "url(../images/fill-star.svg)";
+    }
+
+    if (currentTab === "liked") {
+      var parent = e.target.parentNode.parentNode;
+      parent.parentNode.removeChild(parent);
+    }
+  } else if (e.target.className == "btn-flip") {
+    var id = e.target.id;
+    var ind = parseInt(id.charAt(id.length - 1));
+
+    if (e.target.getAttribute("data-back") === "Register") {
+      if (currentTab === "all") {
+        allCourses[i][4] = "Registered";
+        allCourses[i][5] = "Unregister";
+        registered.push(allCourses[ind]);
+      } else {
+        registered.push(liked[ind]);
+      }
+
+      e.target.setAttribute("data-back", " Unregister ");
+      e.target.setAttribute("data-front", " Registered ");
+    } else {
+      if (currentTab === "reg") {
+        registered.splice(ind, 1);
+        var parent = e.target.parentNode.parentNode;
+        parent.parentNode.removeChild(parent);
+      } else {
+        if (currentTab === "all") {
+          allCourses[i][4] = "Unregistered";
+          allCourses[i][5] = "Register";
+        }
+
+        e.target.setAttribute("data-back", "Register");
+        e.target.setAttribute("data-front", "Unregistered");
+      }
     }
   }
 });

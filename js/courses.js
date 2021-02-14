@@ -201,12 +201,16 @@ var pager = `
     </ul>
 </nav>
 `
-var allCourses = [["Advanced algorithms I", 6, 4,"MACS"],
-                  ["Advanced algorithms II", 6, 3, "MACS"],
-                  ["Game development Unity", 5, 2,"MACS"],
-                  ["Theory of informatics", 5, 2, "MACS"],
-                  ["Machine Vision", 5, 3, "MACS"],
-                  ["Multicore programming", 5, 5, "MACS"]]
+var allCourses = [["Advanced algorithms I", 6, 4,"MACS", "Unregistered", "Register"],
+                  ["Advanced algorithms II", 6, 3, "MACS", "Unregistered", "Register"],
+                  ["Game development Unity", 5, 2,"MACS", "Unregistered", "Register"],
+                  ["Theory of informatics", 5, 2, "MACS", "Unregistered", "Register"],
+                  ["Machine Vision", 5, 3, "MACS", "Unregistered", "Register"],
+                  ["Multicore programming", 5, 5, "MACS", "Unregistered", "Register"]]
+
+var registered = JSON.parse(JSON.stringify(allCourses))
+var liked = JSON.parse(JSON.stringify(allCourses))
+var currentTab = "my"
 
 var page = 1
 var view = 10
@@ -253,20 +257,22 @@ function getAllTable(){
             <td class="courses-credits">${allCourses[i][1]}</td>
             <td class="courses-term">${allCourses[i][2]}</td>
             <td class="courses-enrolled">${allCourses[i][3]}</td>
-            <td class="courses-grade" id="register${i}"><button  class="btn-flip" data-back="Register" data-front="Unregistered"></button></td>
+            <td class="courses-grade"><button id="register${i}" class="btn-flip" data-back="${allCourses[i][5]}" data-front="${allCourses[i][4]}"></button></td>
         `
         tbl.appendChild(tr)
     }
     return tbl
 }
 
-function getRegisteredTable(){
+function getRegisteredTable(favorites){
     var tbl = document.createElement('table');
     tbl.className = "current-courses"
-
     tbl.tHead = getThead()
-    
-    for(var i = 0; i < 5; i++){
+    var arr = registered
+    if (favorites) {
+        arr = liked
+    }
+    for(var i = 0; i < arr.length; i++){
         var tr = document.createElement('tr');
         tr.innerHTML = `  
             <td class="courses-favorite">
@@ -274,13 +280,17 @@ function getRegisteredTable(){
                 </span>
             </td>
             <td class="courses-course">
-                <a href="/courses/....">${allCourses[i][0]}</a>
+                <a href="/courses/....">${arr[i][0]}</a>
             </td>
-            <td class="courses-credits">${allCourses[i][1]}</td>
-            <td class="courses-term">${allCourses[i][2]}</td>
-            <td class="courses-enrolled">${allCourses[i][3]}</td>
-            <td class="courses-grade" id="register${i}"><button class="btn-flip" data-back="Unregister" data-front="Registered"></button></td>
+            <td class="courses-credits">${arr[i][1]}</td>
+            <td class="courses-term">${arr[i][2]}</td>
+            <td class="courses-enrolled">${arr[i][3]}</td>
+            <td class="courses-grade"><button id="register${i}" class="btn-flip" data-back="Unregister" data-front="Registered"></button></td>
         `
+        if (favorites) {
+            tr.childNodes[1].childNodes[1].style.backgroundImage = "url(../images/fill-star.svg)";
+        }
+        
         tbl.appendChild(tr)
     }
     return tbl
@@ -316,26 +326,29 @@ document.getElementsByClassName("class")[0].innerHTML = chooser + my_courses
 
 document.getElementById("all-courses").addEventListener("click", function(e){
     document.getElementsByClassName("main-header")[0].innerHTML = header + options
-
+    currentTab = "all"
     replaceCheckmark()
     refreshTableAndPager(getAllTable())
 })
 
 document.getElementById("my-course").addEventListener("click", function(e){
     deleteIfExists(["current-courses", "pager"])
+    currentTab = "my"
     document.getElementsByClassName("main-header")[0].innerHTML = header
     document.getElementsByClassName("class")[0].insertAdjacentHTML('beforeend', my_courses)
 })
 
 document.getElementById("registered-courses").addEventListener("click", function(e){
     document.getElementsByClassName("main-header")[0].innerHTML = header
-    refreshTableAndPager(getRegisteredTable())
+    currentTab = "reg"
+    refreshTableAndPager(getRegisteredTable(false))
     deleteIfExists(["pager"])
 })
 
 document.getElementById("liked-courses").addEventListener("click", function(e){
     document.getElementsByClassName("main-header")[0].innerHTML = header
-    refreshTableAndPager(getRegisteredTable())
+    currentTab = "liked"
+    refreshTableAndPager(getRegisteredTable(true))
     deleteIfExists(["pager"])
 })
 
@@ -391,6 +404,37 @@ document.addEventListener("click", function (e) {
             e.target.style.backgroundImage = "url(../images/star.svg)";
         } else {
             e.target.style.backgroundImage = "url(../images/fill-star.svg)";
+        }
+        if (currentTab === "liked") {
+            var parent = e.target.parentNode.parentNode
+            parent.parentNode.removeChild(parent);
+        }
+    } else if(e.target.className == "btn-flip") {
+        let id = e.target.id
+        let ind = parseInt(id.charAt(id.length - 1))
+        if (e.target.getAttribute("data-back") === "Register"){
+            if (currentTab === "all"){
+                allCourses[i][4] = "Registered"
+                allCourses[i][5] = "Unregister"
+                registered.push(allCourses[ind])
+            } else {
+                registered.push(liked[ind])
+            }
+            e.target.setAttribute("data-back", " Unregister ")
+            e.target.setAttribute("data-front", " Registered ")
+        } else {
+            if (currentTab === "reg"){
+                registered.splice(ind, 1)
+                var parent = e.target.parentNode.parentNode
+                parent.parentNode.removeChild(parent);
+            } else {
+                if(currentTab === "all"){
+                    allCourses[i][4] = "Unregistered"
+                    allCourses[i][5] = "Register"
+                }
+                e.target.setAttribute("data-back", "Register")
+                e.target.setAttribute("data-front", "Unregistered")
+            }
         }
     }
 })

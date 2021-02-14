@@ -5,11 +5,11 @@ var settings = `
 <div class="settings">
 <div class="content">
     <div style="padding: 24px;">
-        <a href="/home....." title="Click to change profile pic" class="profile-pic"></a>
+        <a title="Click to change profile pic" class="profile-pic"></a>
         <h1 class="settings-header">
             Bill Gates's Settings
         </h1>
-        <form action="/home....." method="POST">
+        <form method="POST">
             <table>
                 <tbody>
                     <tr>
@@ -188,11 +188,7 @@ var settings = `
                                 <a style="color: rgb(188, 24, 38);">billygates@gmail.com</a>
                             </th>
                         </tr>
-                        <tr>
-                            <td class="profile-add-td">
-                                <a style="color: rgb(188, 24, 38);">+ Email Address</a>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
                 <div>
@@ -207,11 +203,11 @@ var settings = `
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="profile-add-td">
-                                    <a style="color: rgb(188, 24, 38);">+ Contact
-                                        Method</a>
-                                </td>
+                                <th class="profile-add-th">
+                                    <a style="color: rgb(188, 24, 38);">+9955555555</a>
+                                </th>
                             </tr>
+                            
                         </tbody>
                     </table>
                 </div>
